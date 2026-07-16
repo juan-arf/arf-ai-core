@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=82.0.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-reliability-framework"
+version = "3.3.10"
+description = "Agentic Reliability Framework – Proprietary, access‑controlled. This is a legacy advisory snapshot; the platform is now closed‑source."
+readme = "README.md"
+authors = [
+    {name = "Juan Petter", email = "juan@arf-ai.com"}
+]
+license = {text = "Proprietary – Access‑Controlled"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Recovery Tools",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.13.2",
+    "numpy",
+    "pyyaml",
+    "circuitbreaker>=2.0.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.0.0",
+    "faiss-cpu>=1.13.2",
+    "sentence-transformers>=2.2.0",
+    "jsonschema>=4.26.0",
+]
+
+[project.urls]
+Homepage = "https://arf-ai.com"
+# No public repository URL – the project is no longer open‑source.
+# Documentation: point to your website if you have a public docs page, else omit.
+
+[tool.setuptools.packages.find]
+include = ["agentic_reliability_framework*"]
+
+[project.scripts]
+arf = "agentic_reliability_framework.cli.main:main"
